@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - lb_perchTarget
+  - healthBar
+  - healthCounter
+  - lb_groundTarget
+  - ammo
+  - killValue
   layers:
   - Default
   - TransparentFX

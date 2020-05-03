@@ -5,6 +5,7 @@ using UnityEngine;
 public class box : MonoBehaviour
 {
     private Color color;
+    public GameObject audioManager;
 
     void Start()
     {
@@ -31,5 +32,15 @@ public class box : MonoBehaviour
 
     private void OnMouseExit() {
         GetComponent<MeshRenderer>().material.color = color;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        //-132.319
+        if (other.gameObject.CompareTag("Player")) {
+            if (audioManager) audioManager.GetComponent<audioManager>().playReload();
+            Destroy(gameObject);
+            GameObject.Find("FirstPersonCharacter").GetComponent<shoot>().reload();
+        }
+        
     }
 }
